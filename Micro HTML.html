@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent Resume Screening and Candidate Shortlisting System</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PDF text extraction -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- DOCX text extraction -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <p class="badge">B.Tech CSBS College Project</p>
+      <h1>Intelligent Resume Screening and Candidate Shortlisting System</h1>
+      <p class="subtitle">
+        Upload TXT, PDF, or DOCX resumes, enter the required skills, and rank candidates
+        by their skill-match percentage.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Job Details</h2>
+
+      <label for="jobTitle">Job Title</label>
+      <input type="text" id="jobTitle" placeholder="Example: Frontend Developer Intern" />
+
+      <label for="jobDescription">Job Description</label>
+      <textarea id="jobDescription" rows="4"
+        placeholder="Enter a short job description. Example: We are looking for a candidate with web development and database skills."></textarea>
+
+      <label for="requiredSkills">Required Skills</label>
+      <input type="text" id="requiredSkills"
+        placeholder="Enter skills separated by commas: Python, C++, HTML, CSS, SQL" />
+
+      <p class="note">
+        Example: <strong>Python, C++, HTML, CSS, SQL</strong>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Upload Resumes</h2>
+
+      <label for="resumeFiles" class="upload-box">
+        <span class="upload-icon">📄</span>
+        <strong>Choose resume files</strong>
+        <span>Supported formats: TXT, PDF, and DOCX</span>
+      </label>
+      <input type="file" id="resumeFiles" accept=".txt,.pdf,.docx" multiple hidden />
+
+      <div id="fileList" class="file-list"></div>
+
+      <button id="analyzeButton" class="primary-button">Analyze Resumes</button>
+      <button id="clearButton" class="secondary-button">Clear Results</button>
+
+      <div id="message" class="message"></div>
+    </section>
+
+    <section class="card">
+      <h2>Shortlisted Candidates</h2>
+
+      <div class="results-header">
+        <p id="jobSummary"></p>
+        <button id="downloadButton" class="primary-button">Download CSV</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Resume File</th>
+              <th>Matched Skills</th>
+              <th>Missing Skills</th>
+              <th>Match %</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Intelligent Resume Screening and Candidate Shortlisting System |
+      HTML, CSS, JavaScript, PDF.js, and Mammoth.js
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
