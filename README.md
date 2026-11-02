@@ -1,0 +1,2 @@
+# Development-of-an-Intelligent-ResumeScreening-and-Candidate-Shortlisting-System
+Objective: To automate the shortlisting of resumes based on job description keywords using NLP. Key tasks: Parse resume files (PDF/DOCX/text),Extract relevant skills using keyword matching, Compare resumes with job profiles, Rank and list best candidates Expected Outcome: An efficient filtering system for initial HR screening.
